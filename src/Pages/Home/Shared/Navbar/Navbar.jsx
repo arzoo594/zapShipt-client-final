@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import Logo from "../../../../Component/Logo";
 import { GoArrowUpRight } from "react-icons/go";
 
@@ -10,7 +10,7 @@ const Navbar = () => {
         <NavLink className="btn" to="/services">
           Services
         </NavLink>
-        <NavLink to="/coverage" className="btn" to="/coverage">
+        <NavLink to="/coverage" className="btn">
           Coverage
         </NavLink>
         <NavLink className="btn" to="/about">
@@ -55,6 +55,9 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box gap-3 z-1 mt-3 w-52 p-2 shadow"
             >
               {links()}
+              <Link to="/login" className="btn bg-secondary text-white">
+                SignIn
+              </Link>
               <NavLink to="/be-a-rider" className="btn bg-primary text-white">
                 Be A Rider{" "}
                 <GoArrowUpRight className="text-2xl bg-secondary rounded-full" />
@@ -67,11 +70,13 @@ const Navbar = () => {
           <ul className="menu menu-horizontal gap-3 px-1">{links()}</ul>
         </div>
         <div className="navbar-end hidden lg:flex gap-2">
-          <a className="btn bg-secondary text-white">SignIn </a>
-          <a className="btn bg-primary text-white">
+          <Link to="login" className="btn bg-secondary text-white">
+            SignIn{" "}
+          </Link>
+          <Link className="btn bg-primary text-white">
             Be A Rider{" "}
             <GoArrowUpRight className="text-2xl bg-secondary rounded-full" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
